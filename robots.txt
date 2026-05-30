@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://demchuk-webdev.github.io/targetolog-demchuk/sitemap.xml
