@@ -495,6 +495,72 @@ footer {
   .footer-inner { flex-direction: column; gap: 20px; }
 }
 
+/* HERO ENTRANCE ANIMATION */
+@keyframes hero-enter {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero h1 { animation: hero-enter 0.6s ease both; }
+.hero p   { animation: hero-enter 0.6s 0.15s ease both; }
+
+/* FADE IN ON SCROLL */
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* READING PROGRESS BAR */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--yellow);
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* BACK TO TOP */
+#back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 40px;
+  height: 40px;
+  background: var(--yellow);
+  color: var(--black);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 900;
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.25s, transform 0.25s, background 0.2s;
+  pointer-events: none;
+  z-index: 50;
+}
+#back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+#back-to-top:hover { background: var(--white); }
+
+@media (max-width: 640px) {
+  #back-to-top { bottom: 20px; right: 16px; }
+}
+
 /* Safari fixes */
 @supports (-webkit-touch-callout: none) {
   .about-photo img { -webkit-transform: translateZ(0); }
