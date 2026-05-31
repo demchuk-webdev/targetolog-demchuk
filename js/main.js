@@ -4,9 +4,6 @@
     document.querySelectorAll('.fade-in').forEach(function (el) {
       el.classList.add('visible');
     });
-    document.querySelectorAll('.article h2').forEach(function (el) {
-      el.classList.add('visible');
-    });
   } else {
     var observer = new IntersectionObserver(
       function (entries) {
@@ -24,10 +21,6 @@
       observer.observe(el);
     });
 
-    document.querySelectorAll('.article h2').forEach(function (el) {
-      el.classList.add('fade-in');
-      observer.observe(el);
-    });
   }
 
   // Reading progress bar (article pages only)
