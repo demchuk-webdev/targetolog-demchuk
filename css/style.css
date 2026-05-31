@@ -31,6 +31,7 @@ header {
   top: 0;
   background: var(--black);
   z-index: 10;
+  overflow: hidden;
 }
 
 header .container {
@@ -517,14 +518,14 @@ footer {
 
 /* READING PROGRESS BAR */
 #progress-bar {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  bottom: -1px;
   left: 0;
   height: 2px;
   width: 0%;
   background: var(--yellow);
-  z-index: 999;
   pointer-events: none;
+  z-index: 1;
 }
 
 /* BACK TO TOP */
@@ -538,22 +539,19 @@ footer {
   color: var(--black);
   border: none;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: var(--font);
   font-size: 18px;
   font-weight: 900;
+  line-height: 40px;
+  text-align: center;
   border-radius: 2px;
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.25s, transform 0.25s, background 0.2s;
+  transition: opacity 0.25s, background 0.2s;
   pointer-events: none;
   z-index: 50;
 }
 #back-to-top.visible {
   opacity: 1;
-  transform: translateY(0);
   pointer-events: auto;
 }
 #back-to-top:hover { background: var(--white); }
