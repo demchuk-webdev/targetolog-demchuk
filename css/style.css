@@ -26,6 +26,7 @@ a { color: inherit; text-decoration: none; }
 header {
   border-bottom: 1px solid var(--gray);
   padding: 24px 0;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   background: var(--black);
