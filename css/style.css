@@ -497,22 +497,26 @@ footer {
   .footer-inner { flex-direction: column; gap: 20px; }
 }
 
-/* HERO ENTRANCE ANIMATION */
-@-webkit-keyframes hero-enter {
-  from { opacity: 0; -webkit-transform: translateY(14px); transform: translateY(14px); }
-  to   { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
-}
-@keyframes hero-enter {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.hero h1 {
-  -webkit-animation: hero-enter 0.6s ease both;
-  animation: hero-enter 0.6s ease both;
-}
+/* HERO ENTRANCE ANIMATION (JS-triggered via body.hero-loaded) */
+.hero h1,
 .hero p {
-  -webkit-animation: hero-enter 0.6s 0.15s ease both;
-  animation: hero-enter 0.6s 0.15s ease both;
+  opacity: 0;
+  -webkit-transform: translateY(14px);
+  transform: translateY(14px);
+  -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+body.hero-loaded .hero h1 {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+body.hero-loaded .hero p {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
 }
 
 /* FADE IN ON SCROLL */

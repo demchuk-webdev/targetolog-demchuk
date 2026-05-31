@@ -1,5 +1,12 @@
 (function () {
-  // Fade-in: якщо IntersectionObserver не підтримується (старий Safari) - одразу показуємо всі елементи
+  // Hero entrance: double rAF гарантує що браузер намалював початковий стан перед transition
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
+      document.body.classList.add('hero-loaded');
+    });
+  });
+
+  // Fade-in on scroll
   if (!('IntersectionObserver' in window)) {
     document.querySelectorAll('.fade-in').forEach(function (el) {
       el.classList.add('visible');
@@ -17,10 +24,14 @@
       { threshold: 0.08, rootMargin: '0px 0px -32px 0px' }
     );
 
-    document.querySelectorAll('.fade-in').forEach(function (el) {
-      observer.observe(el);
+    // Double rAF: без нього елементи що вже у viewport можуть пропустити transition
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        document.querySelectorAll('.fade-in').forEach(function (el) {
+          observer.observe(el);
+        });
+      });
     });
-
   }
 
   // Reading progress bar (article pages only)
