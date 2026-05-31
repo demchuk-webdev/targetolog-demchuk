@@ -498,21 +498,34 @@ footer {
 }
 
 /* HERO ENTRANCE ANIMATION */
+@-webkit-keyframes hero-enter {
+  from { opacity: 0; -webkit-transform: translateY(14px); transform: translateY(14px); }
+  to   { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+}
 @keyframes hero-enter {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.hero h1 { animation: hero-enter 0.6s ease both; }
-.hero p   { animation: hero-enter 0.6s 0.15s ease both; }
+.hero h1 {
+  -webkit-animation: hero-enter 0.6s ease both;
+  animation: hero-enter 0.6s ease both;
+}
+.hero p {
+  -webkit-animation: hero-enter 0.6s 0.15s ease both;
+  animation: hero-enter 0.6s 0.15s ease both;
+}
 
 /* FADE IN ON SCROLL */
 .fade-in {
   opacity: 0;
+  -webkit-transform: translateY(18px);
   transform: translateY(18px);
+  -webkit-transition: opacity 0.55s ease, -webkit-transform 0.55s ease;
   transition: opacity 0.55s ease, transform 0.55s ease;
 }
 .fade-in.visible {
   opacity: 1;
+  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
