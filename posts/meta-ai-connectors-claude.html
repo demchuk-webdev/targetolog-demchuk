@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Підключаємо Meta Ads до Claude: покрокове налаштування, кейси і ризики</title>
+  <meta name="description" content="Як підключити Meta Ads до Claude через AI Connectors — покрокова інструкція, 6 реальних сценаріїв використання і ризики про які варто знати.">
+  <meta name="author" content="Владислав Демчук">
+  <link rel="canonical" href="https://demchuk.online/posts/meta-ai-connectors-claude.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://demchuk.online/posts/meta-ai-connectors-claude.html">
+  <meta property="og:title" content="Підключаємо Meta Ads до Claude: покрокове налаштування, кейси і ризики">
+  <meta property="og:description" content="Як підключити Meta Ads до Claude через AI Connectors — покрокова інструкція, 6 реальних сценаріїв використання і ризики про які варто знати.">
+  <meta property="og:image" content="https://demchuk.online/photo_2025-03-13_13-31-59.jpg">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="article:author" content="Владислав Демчук">
+  <meta property="article:published_time" content="2026-06-01">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div id="progress-bar"></div>
+    <div class="container">
+      <a href="../index.html" class="logo">targetolog_demchuk</a>
+      <nav>
+        <a href="../index.html" class="active">Блог</a>
+        <a href="../about.html">Про мене</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="article">
+        <div class="article-back">
+          <a href="../index.html">← Блог</a>
+        </div>
+
+        <div class="meta">
+          <span>1 червня 2026</span>
+          <span class="meta-sep">·</span>
+          <span class="post-tag">Meta Ads</span>
+          <span class="meta-sep">·</span>
+          <span>~7 хв читання</span>
+        </div>
+
+        <h1>Підключаємо Meta Ads до Claude: покрокове налаштування, кейси і ризики</h1>
+        <div class="article-divider"></div>
+
+        <p>У <a href="meta-ai-connectors.html">попередньому пості</a> я писав про саме оголошення Meta AI Connectors і свою позицію - тестую на одному акаунті, бо відставати від конкурентів страшніше ніж ризик отримати бан. Тепер давай розберемо конкретику: як це налаштувати, що реально можна робити і де справжні ризики.</p>
+
+        <p>Одне важливе уточнення: AI Connectors зараз в open beta і доступні не всім. Пройти кроки нижче ти можеш - але отримати дані зі свого акаунту поки що вийде не у всіх.</p>
+
+        <h2>Як підключити Claude до Meta Ads</h2>
+
+        <p>Преміум підписка не потрібна - кастомні конектори доступні на всіх тарифах включно з безкоштовним. Безкоштовний тариф обмежений одним конектором одночасно. Якщо ти на Team або Enterprise - спочатку Owner організації має додати конектор, і тільки потім ти зможеш до нього підключитись.</p>
+
+        <p>Заходиш у Claude → натискаєш <strong>Customize</strong> в лівому меню.</p>
+        <img src="images/meta-ai-connectors-setup/01_customize.webp" alt="Кнопка Customize в лівому меню Claude">
+
+        <p>Натискаєш <strong>Connectors</strong>.</p>
+        <img src="images/meta-ai-connectors-setup/02_connectors.webp" alt="Розділ Connectors в налаштуваннях Claude">
+
+        <p>Натискаєш <strong>+</strong> → <strong>Add custom connector</strong>.</p>
+        <img src="images/meta-ai-connectors-setup/03_add_connector.webp" alt="Форма додавання кастомного конектора">
+
+        <p>Вводиш назву і URL MCP-сервера Meta: <code>https://mcp.facebook.com/ads</code>. Натискаєш <strong>Add</strong>.</p>
+        <img src="images/meta-ai-connectors-setup/04_connector_added.webp" alt="Конектор додано до списку">
+
+        <p>Конектор з'явиться в списку, але ще не буде підключений.</p>
+        <img src="images/meta-ai-connectors-setup/05_not_connected.webp" alt="Конектор є але не підключений">
+
+        <p>Натискаєш <strong>Connect</strong> → проходиш Facebook Login → вибираєш бізнес-портфоліо які хочеш підключити до Claude.</p>
+
+        <p>Коли починаєш новий чат - натискаєш <strong>+</strong> → <strong>Connectors</strong> і вмикаєш свій конектор.</p>
+        <img src="images/meta-ai-connectors-setup/06_toggle_chat.webp" alt="Увімкнення конектора в новому чаті">
+
+        <h2>Які інструменти доступні</h2>
+
+        <p>Після підключення Claude отримує доступ до списку інструментів Meta. Зараз їх 29. Ось найцікавіші:</p>
+
+        <ul>
+          <li><strong>ads_get_ad_entities</strong> - дані по ефективності на рівні акаунту, кампанії, адсету або оголошення за будь-який період з фільтрами і розбивками</li>
+          <li><strong>ads_insights_advertiser_context</strong> - загальний огляд твого бізнесу і воронки, щоб Claude розумів контекст</li>
+          <li><strong>ads_insights_performance_trend</strong> - аналіз динаміки ключових метрик у часі</li>
+          <li><strong>ads_insights_anomaly_signal</strong> - незвичні патерни в результатах які варто перевірити</li>
+          <li><strong>ads_insights_industry_benchmark</strong> - порівняння твоїх адсетів з агрегованими бенчмарками схожих рекламодавців</li>
+          <li><strong>ads_insights_auction_ranking_benchmarks</strong> - які оголошення виграють аукціон, а які недостатньо доставляються</li>
+          <li><strong>ads_get_errors</strong> - помилки які блокують доставку на рівні кампанії, адсету або оголошення</li>
+        </ul>
+
+        <img src="images/meta-ai-connectors-setup/07_tools_list.webp" alt="Список доступних інструментів Meta в Claude">
+
+        <h2>6 реальних сценаріїв використання</h2>
+
+        <h3>1. Звітність і аналіз акаунту</h3>
+        <p>Найочевидніше - але ефективне. Просиш Claude витягнути дані за будь-який період на будь-якому рівні: акаунт, кампанія, адсет, оголошення. Сортування по витратах, ROAS, CTR, частоті. Розбивки по віку, гео, плейсменту, пристрою.</p>
+        <p>Різниця від Ads Manager - це діалог. Ads Manager швидкий якщо ти вже знаєш які колонки і фільтри хочеш. Claude замінює ті моменти коли ти б вивантажував в Excel щоб відповісти на трохи складніше запитання.</p>
+        <p><em>Приклад: "Покажи топ-10 адсетів по ROAS за останні 30 днів, але тільки ті де мінімум 50 конверсій, з розбивкою по плейсменту."</em></p>
+
+        <h3>2. Діагностика проблем</h3>
+        <p>Claude може виявляти аномалії - різке зростання CPM, проблеми з частотою, падіння конверсій які ти міг не помітити. Аналізує аукціонну ефективність: які оголошення виграють, які програють конкурентам. Плюс бенчмарки - чи твої результати взагалі в нормі для твоєї ніші.</p>
+        <p><em>Приклад: "Що незвичного в моєму акаунті цього тижня?" - і далі копаєш в те що знайде.</em></p>
+
+        <h3>3. Перевірка помилок перед запуском</h3>
+        <p>Meta показує помилки які блокують доставку - ті самі червоні попередження в кабінеті. Конектор дозволяє одним запитом просканувати весь акаунт замість того щоб клікати в кожну кампанію окремо. Це ловить тільки помилки конфігурації - не порушення правил і не обмеження на рівні акаунту.</p>
+        <p><em>Приклад: "Покажи всі помилки які блокують доставку в активних кампаніях і адсетах."</em></p>
+
+        <h3>4. Здоров'я пікселя і сигналів</h3>
+        <p>Три інструменти покривають якість даних: метадані конфігурації, оцінки якості сигналу і статистика об'єму подій. Той самий нудний аудит - чи піксель нормально спрацьовує, яка якість матчингу, чи приходять події в очікуваному об'ємі. Добре поєднується з Conversions API як перевірка що все налаштовано правильно.</p>
+        <p><em>Приклад: "Перевір здоров'я мого пікселя і якість матчингу подій, підсумуй що виглядає підозріло."</em></p>
+
+        <h3>5. Створення кампаній і оголошень</h3>
+        <p>Claude може створювати кампанії, адсети і оголошення. Важливо: все створюється в статусі <strong>PAUSED</strong> за замовчуванням. Нічого не йде в ротацію поки ти сам не запустиш в Ads Manager. Може також оновлювати існуючі сутності - бюджети, назви, таргетинг - і паузити або активувати на запит.</p>
+        <p><em>Приклад: "Продублюй мій найкращий адсет з трьома новими варіантами креативів, все в паузі для перевірки."</em></p>
+
+        <h3>6. Каталог і e-commerce</h3>
+        <p>Якщо запускаєш рекламу для e-commerce - конектор може створювати нові каталоги товарів, переглядати продукти і сети продуктів, показувати діагностику фідів і проблеми з видимістю товарів.</p>
+        <p><em>Приклад: "Знайди товари в каталозі з помилками фіду або проблемами видимості, поясни що їх спричиняє."</em></p>
+
+        <h2>Ризики - і вони реальні</h2>
+
+        <p>Два місяці тому людей банили за AI-інтеграції. Тепер Meta сама запрошує це робити. Це не пастка - найімовірніше ті бани були помилкою. Але я досі нервую, і це нормально.</p>
+
+        <p>Є кілька конкретних ризиків яких варто бути свідомим.</p>
+
+        <p><strong>Повний доступ читання і запису.</strong> Будь-який інструмент з таким рівнем доступу має тебе насторожувати. Так, нові сутності створюються в паузі - але що може піти не так через баг або неточний промпт?</p>
+
+        <p><strong>Конектор наслідує доступ твого Facebook-акаунту.</strong> Якщо ти в команді ITSTEP і в твоєму портфоліо є клієнтські акаунти - вони теж потрапляють в зону доступу. Це вже не тільки твій ризик.</p>
+
+        <p><strong>Ризик завищених очікувань.</strong> Це справді потужна технологія. Але "автоматизую все і результати стануть кращі" - небезпечна думка. Репортинг і діагностика - низький ризик. Автоматичне внесення змін без нагляду - зовсім інша історія.</p>
+
+        <p>Якщо поки не відчуваєш себе готовим - зачекай. FOMO краще ніж втрата акаунту.</p>
+
+        <p><em>Тестуєш AI Connectors? Напиши в коментарях що пробував і як пройшло.</em></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-copy">© 2026 Vladyslav Demchuk</span>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/targetolog_demchuk/" target="_blank" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/vladyslav-demchuk/" target="_blank" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <button id="back-to-top" aria-label="Вгору">↑</button>
+  <script src="../js/main.js"></script>
+</body>
+</html>

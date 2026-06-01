@@ -333,6 +333,13 @@ nav a.active::after { width: 100%; }
   border-radius: 2px;
 }
 
+.article h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 36px 0 12px;
+  color: var(--yellow);
+}
+
 .article p {
   font-size: 16px;
   line-height: 1.9;
@@ -353,6 +360,20 @@ nav a.active::after { width: 100%; }
 
 .article a { color: var(--yellow); text-decoration: underline; text-underline-offset: 3px; }
 .article a:hover { opacity: 0.75; }
+
+.article img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 8px 0 22px;
+  opacity: 0.9;
+}
+
+.article .img-caption {
+  font-size: 13px;
+  opacity: 0.45;
+  margin-top: -14px;
+  margin-bottom: 28px;
+}
 
 .article ul {
   padding-left: 20px;
