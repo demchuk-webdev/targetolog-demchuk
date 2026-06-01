@@ -351,6 +351,18 @@ nav a.active::after { width: 100%; }
 
 .article strong { color: var(--yellow); font-weight: 700; }
 
+.article ul {
+  padding-left: 20px;
+  margin-bottom: 22px;
+}
+
+.article ul li {
+  font-size: 16px;
+  line-height: 1.9;
+  opacity: 0.82;
+  margin-bottom: 6px;
+}
+
 /* ABOUT */
 .about {
   padding: 80px 0;
