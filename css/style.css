@@ -351,6 +351,9 @@ nav a.active::after { width: 100%; }
 
 .article strong { color: var(--yellow); font-weight: 700; }
 
+.article a { color: var(--yellow); text-decoration: underline; text-underline-offset: 3px; }
+.article a:hover { opacity: 0.75; }
+
 .article ul {
   padding-left: 20px;
   margin-bottom: 22px;
