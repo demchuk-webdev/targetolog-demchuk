@@ -133,7 +133,7 @@
 
     // Comments (giscus). Вмикається після встановлення giscus-додатку на репозиторій:
     // github.com/apps/giscus → потім поставити GISCUS_ENABLED = true.
-    var GISCUS_ENABLED = false;
+    var GISCUS_ENABLED = true;
     if (GISCUS_ENABLED) {
       var box = document.createElement('section');
       box.className = 'comments';
