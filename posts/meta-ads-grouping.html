@@ -58,107 +58,125 @@
   <header>
     <div id="progress-bar"></div>
     <div class="container">
+      <a href="../index.html" class="logo">targetolog_demchuk</a>
       <nav>
-        <a href="../index.html" class="logo">Влад Демчук</a>
-        <div class="nav-links">
-          <a href="../index.html">Блог</a>
-          <a href="../about.html">Про мене</a>
-        </div>
+        <a href="../index.html" class="active">Блог</a>
+        <a href="../about.html">Про мене</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <article class="container article-content">
-      <a href="../index.html" class="back-link">← Блог</a>
+    <div class="container">
+      <div class="article">
+        <div class="article-back">
+          <a href="../index.html">← Блог</a>
+        </div>
 
-      <div class="article-meta">
-        <span>6 червня 2026</span>
-        <span>·</span>
-        <span>4 хв читання</span>
-        <span>·</span>
-        <span class="tag">Meta Ads</span>
-        <span class="tag">Ads Manager</span>
+        <div class="meta">
+          <span>6 червня 2026</span>
+          <span class="meta-sep">·</span>
+          <span class="post-tag">Meta Ads</span>
+          <span class="meta-sep">·</span>
+          <span class="post-tag">Ads Manager</span>
+          <span class="meta-sep">·</span>
+          <span>~4 хв читання</span>
+        </div>
+
+        <h1>Grouping в Ads Manager: нова функція для сортування кампаній і груп оголошень</h1>
+        <div class="article-divider"></div>
+
+        <p>Якщо ти нещодавно відкривав Ads Manager і помітив нову кнопку поруч з Breakdowns - це не глюк. Meta тихо додала функцію Grouping, і поки вона є не у всіх.</p>
+
+        <img src="img/grouping/01_button.png" alt="Кнопка Grouping в Ads Manager поруч з Breakdowns">
+
+        <h2>Що таке Grouping</h2>
+
+        <p>Grouping - це інструмент для групування кампаній або груп оголошень за спільними параметрами. Знаходиться він поруч з Breakdowns у верхній панелі Ads Manager і доступний тільки на рівні кампаній і груп оголошень - на рівні оголошень його немає.</p>
+
+        <p>Важливо відразу зрозуміти різницю між Grouping і Breakdowns:</p>
+
+        <ul>
+          <li><strong>Breakdowns</strong> розбиває результати кожної кампанії або групи оголошень на частини - наприклад, показує вік, стать, плейсмент окремими рядками для кожної кампанії.</li>
+          <li><strong>Grouping</strong> збирає кампанії або групи оголошень разом за спільною ознакою - наприклад, об'єднує всі кампанії з однаковою стратегією ставки в один рядок.</li>
+        </ul>
+
+        <p>Коротко: Breakdowns ділить, Grouping збирає.</p>
+
+        <h2>Чотири категорії групування</h2>
+
+        <p>Всі доступні параметри розбиті на чотири розділи.</p>
+
+        <h3>Ad settings</h3>
+
+        <p>Тут можна згрупувати за налаштуваннями кампаній і груп оголошень:</p>
+        <ul>
+          <li>Campaign name - назва кампанії</li>
+          <li>Delivery - статус доставки</li>
+          <li>End date - дата завершення</li>
+          <li>Recently changed - нещодавно змінені</li>
+          <li>Special Ad Category - спеціальна категорія реклами</li>
+          <li>Start date - дата запуску</li>
+        </ul>
+
+        <img src="img/grouping/02_ad-settings.webp" alt="Ad settings - список параметрів групування">
+
+        <h3>Attribution</h3>
+
+        <p>Групування за параметрами атрибуції:</p>
+        <ul>
+          <li>Attribution setting - вікно атрибуції (наприклад, 7-day click або 7-day click + 1-day view)</li>
+          <li>Conversion count - тип підрахунку конверсій</li>
+          <li>Conversion event - подія конверсії</li>
+          <li>Conversion location - місце конверсії</li>
+        </ul>
+
+        <img src="img/grouping/03_attribution.webp" alt="Attribution - список параметрів групування">
+
+        <p>Це особливо корисно якщо в акаунті різні групи оголошень з різними вікнами атрибуції - можна одразу побачити як вони відрізняються за результатами.</p>
+
+        <img src="img/grouping/04_attribution-result.webp" alt="Результат групування по Attribution setting">
+
+        <h3>Budget and bidding</h3>
+
+        <p>Групування за бюджетом і стратегією ставок:</p>
+        <ul>
+          <li>Ad set spending limit - ліміт витрат групи</li>
+          <li>Bid strategy - стратегія ставки</li>
+          <li>Budget scheduling - розклад бюджету</li>
+          <li>Budget strategy - тип бюджету</li>
+          <li>Buying type - тип закупівлі</li>
+        </ul>
+
+        <img src="img/grouping/05_budget-bidding.png" alt="Budget and bidding - список параметрів групування">
+
+        <p>Наприклад, можна одразу побачити всі кампанії з Highest volume окремо від тих що з Bid cap або Cost per result goal.</p>
+
+        <img src="img/grouping/06_bid-result.webp" alt="Результат групування по Bid strategy">
+
+        <h3>Business goals</h3>
+
+        <p>Групування за бізнес-цілями:</p>
+        <ul>
+          <li>Evergreen campaign - вічнозелена кампанія</li>
+          <li>Funnel stage - етап воронки (верхній, середній, нижній)</li>
+          <li>Objective - ціль кампанії</li>
+          <li>Performance goal - ціль ефективності</li>
+        </ul>
+
+        <img src="img/grouping/07_business-goals.webp" alt="Business goals - список параметрів групування">
+
+        <p>Funnel stage - цікавий параметр для тих хто структурує акаунт по воронці. Evergreen campaign поки що трохи незрозумілий - Meta групує кампанії як "Evergreen" і "Not Evergreen", але чіткого пояснення що саме вважається вічнозеленим поки немає.</p>
+
+        <h2>Кому це буде корисно</h2>
+
+        <p>Grouping найбільше допоможе при роботі з великими акаунтами де десятки кампаній і груп оголошень. Замість того щоб вручну фільтрувати або сортувати - можна швидко згрупувати все за стратегією ставки, атрибуцією або ціллю і відразу порівняти результати.</p>
+
+        <p>Для невеликих акаунтів з 5-10 кампаніями функція не дасть відчутної різниці - там і так все видно.</p>
+
+        <p>Поки що Grouping є не у всіх акаунтах - Meta поступово розгортає оновлення. Якщо кнопки ще немає - просто чекай.</p>
       </div>
-
-      <h1>Grouping в Ads Manager: нова функція для сортування кампаній і груп оголошень</h1>
-
-      <p>Якщо ти нещодавно відкривав Ads Manager і помітив нову кнопку поруч з Breakdowns - це не глюк. Meta тихо додала функцію Grouping, і поки вона є не у всіх.</p>
-
-      <h2>Що таке Grouping</h2>
-
-      <p>Grouping - це інструмент для групування кампаній або груп оголошень за спільними параметрами. Знаходиться він поруч з Breakdowns у верхній панелі Ads Manager і доступний тільки на рівні кампаній і груп оголошень - на рівні оголошень його немає.</p>
-
-      <p>Важливо відразу зрозуміти різницю між Grouping і Breakdowns:</p>
-
-      <ul>
-        <li><strong>Breakdowns</strong> розбиває результати кожної кампанії або групи оголошень на частини - наприклад, показує вік, стать, плейсмент окремими рядками для кожної кампанії.</li>
-        <li><strong>Grouping</strong> збирає кампанії або групи оголошень разом за спільною ознакою - наприклад, об'єднує всі кампанії з однаковою стратегією ставки в один рядок.</li>
-      </ul>
-
-      <p>Коротко: Breakdowns ділить, Grouping збирає.</p>
-
-      <h2>Чотири категорії групування</h2>
-
-      <p>Всі доступні параметри розбиті на чотири розділи.</p>
-
-      <h3>Ad settings</h3>
-
-      <p>Тут можна згрупувати за налаштуваннями кампаній і груп оголошень:</p>
-      <ul>
-        <li>Campaign name - назва кампанії</li>
-        <li>Delivery - статус доставки</li>
-        <li>End date - дата завершення</li>
-        <li>Recently changed - нещодавно змінені</li>
-        <li>Special Ad Category - спеціальна категорія реклами</li>
-        <li>Start date - дата запуску</li>
-      </ul>
-
-      <h3>Attribution</h3>
-
-      <p>Групування за параметрами атрибуції:</p>
-      <ul>
-        <li>Attribution setting - вікно атрибуції (наприклад, 7-day click або 7-day click + 1-day view)</li>
-        <li>Conversion count - тип підрахунку конверсій</li>
-        <li>Conversion event - подія конверсії</li>
-        <li>Conversion location - місце конверсії</li>
-      </ul>
-
-      <p>Це особливо корисно якщо в акаунті різні групи оголошень з різними вікнами атрибуції - можна одразу побачити як вони відрізняються за результатами.</p>
-
-      <h3>Budget and bidding</h3>
-
-      <p>Групування за бюджетом і стратегією ставок:</p>
-      <ul>
-        <li>Ad set spending limit - ліміт витрат групи</li>
-        <li>Bid strategy - стратегія ставки</li>
-        <li>Budget scheduling - розклад бюджету</li>
-        <li>Budget strategy - тип бюджету</li>
-        <li>Buying type - тип закупівлі</li>
-      </ul>
-
-      <p>Наприклад, можна одразу побачити всі кампанії з Highest volume окремо від тих що з Bid cap або Cost per result goal.</p>
-
-      <h3>Business goals</h3>
-
-      <p>Групування за бізнес-цілями:</p>
-      <ul>
-        <li>Evergreen campaign - вічнозелена кампанія</li>
-        <li>Funnel stage - етап воронки (верхній, середній, нижній)</li>
-        <li>Objective - ціль кампанії</li>
-        <li>Performance goal - ціль ефективності</li>
-      </ul>
-
-      <p>Funnel stage - цікавий параметр для тих хто структурує акаунт по воронці. Evergreen campaign поки що трохи незрозумілий - Meta групує кампанії як "Evergreen" і "Not Evergreen", але чіткого пояснення що саме вважається вічнозеленим поки немає.</p>
-
-      <h2>Кому це буде корисно</h2>
-
-      <p>Grouping найбільше допоможе при роботі з великими акаунтами де десятки кампаній і груп оголошень. Замість того щоб вручну фільтрувати або сортувати - можна швидко згрупувати все за стратегією ставки, атрибуцією або ціллю і відразу порівняти результати.</p>
-
-      <p>Для невеликих акаунтів з 5-10 кампаніями функція не дасть відчутної різниці - там і так все видно.</p>
-
-      <p>Поки що Grouping є не у всіх акаунтах - Meta поступово розгортає оновлення. Якщо кнопки ще немає - просто чекай.</p>
-    </article>
+    </div>
   </main>
 
   <footer>
