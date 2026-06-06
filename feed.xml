@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Влад Демчук — Meta Ads для практиків</title>
+    <link>https://demchuk.online/</link>
+    <atom:link href="https://demchuk.online/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Пишу про оновлення і механіки Meta Ads. Інхаус таргетолог в ITSTEP Academy.</description>
+    <language>uk</language>
+    <lastBuildDate>Sat, 06 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Meta прибрала рекламу на лайки сторінки. Кінець епохи</title>
+      <link>https://demchuk.online/posts/page-likes-ads-gone.html</link>
+      <guid isPermaLink="true">https://demchuk.online/posts/page-likes-ads-gone.html</guid>
+      <category>Meta Ads</category>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Page likes performance goal більше недоступна. Чому це символічно і що Meta підставляє замість.</description>
+    </item>
+    <item>
+      <title>Grouping в Ads Manager: нова функція для сортування кампаній і груп оголошень</title>
+      <link>https://demchuk.online/posts/meta-ads-grouping.html</link>
+      <guid isPermaLink="true">https://demchuk.online/posts/meta-ads-grouping.html</guid>
+      <category>Ads Manager</category>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Meta тихо додала Grouping поруч з Breakdowns. Що це, чим відрізняється від розбивок і навіщо це таргетологу.</description>
+    </item>
+    <item>
+      <title>Meta Pixel з AI: що змінюється і чому це важливо для e-commerce</title>
+      <link>https://demchuk.online/posts/meta-pixel-ai-data.html</link>
+      <guid isPermaLink="true">https://demchuk.online/posts/meta-pixel-ai-data.html</guid>
+      <category>Meta Pixel</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Meta вмикає AI-збір даних про продукти через Pixel. Як працює, що поки незрозуміло і що зробити заздалегідь.</description>
+    </item>
+    <item>
+      <title>Підключаємо Meta Ads до Claude: покрокове налаштування, кейси і ризики</title>
+      <link>https://demchuk.online/posts/meta-ai-connectors-claude.html</link>
+      <guid isPermaLink="true">https://demchuk.online/posts/meta-ai-connectors-claude.html</guid>
+      <category>Meta Ads</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Як підключити AI Connectors, 6 реальних сценаріїв використання і де справжній ризик для тих хто веде кілька акаунтів.</description>
+    </item>
+    <item>
+      <title>Meta запустила AI-конектори для реклами. Але ще два місяці тому за це банили</title>
+      <link>https://demchuk.online/posts/meta-ai-connectors.html</link>
+      <guid isPermaLink="true">https://demchuk.online/posts/meta-ai-connectors.html</guid>
+      <category>Meta Ads</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Meta офіційно відкрила доступ до управління рекламою через ChatGPT і Claude. Чому я поки не поспішаю це використовувати.</description>
+    </item>
+    <item>
+      <title>Майбутнє таргетолога: що буде з нашою професією коли Meta автоматизує все</title>
+      <link>https://demchuk.online/posts/maibutnie-tarhetologa.html</link>
+      <guid isPermaLink="true">https://demchuk.online/posts/maibutnie-tarhetologa.html</guid>
+      <category>Meta Ads</category>
+      <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
+      <description>Цукерберг сказав що рекламодавці зможуть просто назвати мету і бюджет, а Meta зробить решту. Це вже не фантазія.</description>
+    </item>
+  </channel>
+</rss>
