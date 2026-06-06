@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&display=swap');
+/* Шрифт Unbounded підключений через <link rel="preconnect"> + <link rel="stylesheet"> у <head>
+   кожної сторінки — це швидше за @import, який блокує рендеринг. */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -96,26 +97,6 @@ nav a.active::after { width: 100%; }
 .hero {
   padding: 80px 0 72px;
   border-bottom: 1px solid var(--gray);
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.38);
-  margin-bottom: 32px;
-}
-
-.badge-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--yellow);
-  flex-shrink: 0;
 }
 
 .hero h1 {
@@ -363,9 +344,20 @@ nav a.active::after { width: 100%; }
 
 .article img {
   width: 100%;
+  height: auto;
   border-radius: 8px;
   margin: 8px 0 22px;
   opacity: 0.9;
+}
+
+.article code {
+  font-family: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--gray);
+  color: var(--yellow);
+  padding: 2px 6px;
+  border-radius: 4px;
+  word-break: break-word;
 }
 
 .article .img-caption {
@@ -411,40 +403,6 @@ nav a.active::after { width: 100%; }
   opacity: 0.62;
   margin-bottom: 18px;
   line-height: 1.9;
-}
-
-.about-stats {
-  display: flex;
-  margin-top: 44px;
-  padding-top: 32px;
-  border-top: 1px solid var(--gray);
-}
-
-.stat {
-  flex: 1;
-}
-
-.stat + .stat {
-  border-left: 1px solid var(--gray);
-  padding-left: 24px;
-}
-
-.stat-value {
-  font-size: 26px;
-  font-weight: 900;
-  color: var(--yellow);
-  letter-spacing: -1px;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.stat-label {
-  font-size: 9px;
-  font-weight: 500;
-  opacity: 0.32;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  line-height: 1.5;
 }
 
 .about-photo {
@@ -512,7 +470,6 @@ footer {
   .container { padding: 0 16px; }
 
   .hero { padding: 48px 0 44px; }
-  .hero-badge { font-size: 10px; margin-bottom: 24px; }
   .hero p { font-size: 14px; }
 
   .posts { padding: 40px 0; }
@@ -626,5 +583,28 @@ body.hero-loaded .hero p {
   }
   footer {
     padding-bottom: max(24px, env(safe-area-inset-bottom));
+  }
+}
+
+/* ACCESSIBLE FOCUS — видимий контур тільки для клавіатурної навігації */
+:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* REDUCED MOTION — поважаємо системне налаштування «менше анімації» */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .fade-in,
+  .hero h1,
+  .hero p {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
