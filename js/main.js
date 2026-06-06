@@ -1,4 +1,17 @@
 (function () {
+  // Google Analytics 4
+  var GA_ID = 'G-XVW94D686E';
+  if (GA_ID) {
+    var ga = document.createElement('script');
+    ga.async = true;
+    ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(ga);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+
   // Hero entrance: double rAF гарантує що браузер намалював початковий стан перед transition
   requestAnimationFrame(function () {
     requestAnimationFrame(function () {
